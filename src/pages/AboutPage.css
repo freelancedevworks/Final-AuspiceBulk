@@ -1,0 +1,267 @@
+/* Page Header */
+.page-header {
+  
+  position: relative;
+  height: 250px;
+  background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-300) 100%);
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  overflow: hidden;
+}
+
+.about-header {
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 1200 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='1200' y1='150' y2='150'%3E%3Cstop offset='0' stop-color='%233399CC'/%3E%3Cstop offset='1' stop-color='%23006699'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='1200' y2='300'%3E%3Cstop offset='0' stop-color='%2333CCFF' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%2333CCFF' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='300'/%3E%3Cg fill-opacity='0.5'%3E%3Cpath fill='url(%23b)' d='M0 0L1200 0L1200 300L0 300Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+  position: relative;
+}
+
+/* .page-header::after {
+  
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V120H0V0z' fill='%23ffffff'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+} */
+
+.page-title {
+  
+  font-size: 2.8rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.breadcrumbs {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.breadcrumbs a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+/* Company Overview */
+.company-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.company-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.about-image-container {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-100);
+  background-image: linear-gradient(45deg, var(--primary-200) 25%, transparent 25%, transparent 75%, var(--primary-200) 75%, var(--primary-200)),
+  linear-gradient(45deg, var(--primary-200) 25%, transparent 25%, transparent 75%, var(--primary-200) 75%, var(--primary-200));
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  position: relative;
+}
+
+/* Mission and Vision */
+.mission-vision-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.mission-box, .vision-box {
+  background-color: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.mission-box:hover, .vision-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.mission-icon, .vision-icon {
+  font-size: 2.5rem;
+  color: var(--primary-200);
+  margin-bottom: 1.5rem;
+}
+
+.mission-box h3, .vision-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-300);
+}
+
+.mission-box p, .vision-box p {
+  line-height: 1.75;
+}
+
+/* Values Section */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.value-card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+  height: 100%;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.value-icon {
+  font-size: 2rem;
+  color: var(--primary-200);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(51, 153, 204, 0.1);
+}
+
+.value-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-300);
+}
+
+.value-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Why Choose Us Section */
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.advantage-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-md);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform var(--transition-medium);
+}
+
+.advantage-card:hover {
+  transform: translateY(-5px);
+}
+
+.advantage-card h3 {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.advantage-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--primary-100);
+}
+
+.advantage-card p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.cta-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .company-overview {
+    grid-template-columns: 1fr;
+  }
+  
+  .mission-vision-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    height: 200px;
+  }
+  
+  .page-title {
+    font-size: 2.2rem;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .mission-box, .vision-box {
+    padding: 1.5rem;
+  }
+  
+  .mission-icon, .vision-icon {
+    font-size: 2rem;
+  }
+} 

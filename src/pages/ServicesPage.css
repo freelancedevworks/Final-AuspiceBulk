@@ -1,0 +1,326 @@
+/* Services Page Styling */
+
+/* Page Header - inherits base styles from AboutPage.css */
+.services-header {
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 1200 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='1200' y1='150' y2='150'%3E%3Cstop offset='0' stop-color='%2333CCFF'/%3E%3Cstop offset='1' stop-color='%233399CC'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='1200' y2='300'%3E%3Cstop offset='0' stop-color='%23006699' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23006699' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='300'/%3E%3Cg fill-opacity='0.5'%3E%3Cpath fill='url(%23b)' d='M0 0L1200 0L1200 300L0 300Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Services Overview */
+.services-overview {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.overview-content p {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+/* Service Detail Sections */
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.service-detail-grid.reverse {
+  grid-template-columns: 1fr 1fr;
+  direction: rtl;
+}
+
+.service-detail-grid.reverse .service-content {
+  direction: ltr;
+}
+
+.service-detail-grid.reverse .service-image {
+  direction: ltr;
+}
+
+.service-intro p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.service-image-container {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.service-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.service-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  color: var(--primary-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(51, 153, 204, 0.1);
+  flex-shrink: 0;
+}
+
+.feature-content h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-300);
+}
+
+.feature-content p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Commodities Section */
+.commodities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.commodity-card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.commodity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.commodity-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.commodity-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--primary-200);
+}
+
+.commodity-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Vessel Types Section */
+/* .vessel-types-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.vessel-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.vessel-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.vessel-types-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.vessel-type {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.vessel-type:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.vessel-type h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-300);
+}
+
+.vessel-type p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.2rem;
+}
+
+.vessel-image {
+  width: 100%;
+  height: 150px;
+  background-color: var(--primary-100);
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' id='ship' viewBox='0 0 200 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20,80 L40,50 L160,50 L180,80 Z' fill='%233399CC'/%3E%3Cpath d='M50,50 L50,30 L150,30 L150,50 Z' fill='%23006699'/%3E%3Cpath d='M60,30 L60,10 L80,10 L80,30 Z' fill='%233399CC'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: var(--border-radius-sm);
+}
+
+.vessel-image.handysize {
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' id='ship' viewBox='0 0 200 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20,80 L40,60 L160,60 L180,80 Z' fill='%233399CC'/%3E%3Cpath d='M60,60 L60,40 L140,40 L140,60 Z' fill='%23006699'/%3E%3Cpath d='M70,40 L70,20 L90,20 L90,40 Z' fill='%233399CC'/%3E%3C/svg%3E");
+}
+
+.vessel-image.supramax {
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' id='ship' viewBox='0 0 200 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10,80 L40,50 L160,50 L190,80 Z' fill='%233399CC'/%3E%3Cpath d='M50,50 L50,30 L150,30 L150,50 Z' fill='%23006699'/%3E%3Cpath d='M60,30 L60,10 L80,10 L80,30 Z' fill='%233399CC'/%3E%3Crect x='85' y='20' width='10' height='10' fill='%233399CC'/%3E%3Crect x='100' y='20' width='10' height='10' fill='%233399CC'/%3E%3Crect x='115' y='20' width='10' height='10' fill='%233399CC'/%3E%3C/svg%3E");
+}
+
+.vessel-image.panamax {
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' id='ship' viewBox='0 0 200 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5,80 L35,45 L165,45 L195,80 Z' fill='%233399CC'/%3E%3Cpath d='M45,45 L45,25 L155,25 L155,45 Z' fill='%23006699'/%3E%3Cpath d='M50,25 L50,10 L70,10 L70,25 Z' fill='%233399CC'/%3E%3Crect x='75' y='15' width='15' height='10' fill='%233399CC'/%3E%3Crect x='95' y='15' width='15' height='10' fill='%233399CC'/%3E%3Crect x='115' y='15' width='15' height='10' fill='%233399CC'/%3E%3Crect x='135' y='15' width='15' height='10' fill='%233399CC'/%3E%3C/svg%3E");
+}
+
+.vessel-image.capesize {
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' id='ship' viewBox='0 0 200 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,80 L30,40 L170,40 L200,80 Z' fill='%233399CC'/%3E%3Cpath d='M40,40 L40,20 L160,20 L160,40 Z' fill='%23006699'/%3E%3Cpath d='M45,20 L45,5 L65,5 L65,20 Z' fill='%233399CC'/%3E%3Crect x='70' y='10' width='15' height='10' fill='%233399CC'/%3E%3Crect x='90' y='10' width='15' height='10' fill='%233399CC'/%3E%3Crect x='110' y='10' width='15' height='10' fill='%233399CC'/%3E%3Crect x='130' y='10' width='15' height='10' fill='%233399CC'/%3E%3C/svg%3E");
+} */
+
+/* Service Inquiry Form */
+/* .service-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.service-inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.8rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  transition: all var(--transition-fast);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-100);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.form-submit {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+} */
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .service-detail-grid,
+  .service-detail-grid.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+  
+  .service-image {
+    order: -1;
+  }
+  
+  .service-detail-grid.reverse .service-image {
+    order: -1;
+  }
+  
+  .commodities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .vessel-types-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .commodities-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .vessel-types-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-form-container {
+    padding: 1.5rem;
+  }
+} 

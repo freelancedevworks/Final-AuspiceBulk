@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Light Theme Colors */
+  --primary-100: #33CCFF;
+  --primary-200: #3399CC;
+  --primary-300: #006699;
+  --background: #FFFFFF;
+  --text-primary: #0A1929;
+  --text-secondary: #4A5568;
+  --accent: #F5F5F5;
+  --border: #E2E8F0;
+  --card-bg: #FFFFFF;
+  --shadow: rgba(0, 0, 0, 0.05);
+
+  /* Shared Variables */
+  --transition-slow: 0.5s ease;
+  --transition-medium: 0.3s ease;
+  --transition-fast: 0.15s ease;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  --max-width: 1200px;
+  --header-height: 80px;
+}
+
+[data-theme='dark'] {
+  --primary-100: #4FDDFF;
+  --primary-200: #3ABBEE;
+  --primary-300: #1A85B1;
+  --background: #0A1929;
+  --text-primary: #F0F7FF;
+  --text-secondary: #A0AEC0;
+  --accent: #172A45;
+  --border: #2D3748;
+  --card-bg: #111E2E;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  transition: background-color var(--transition-medium), color var(--transition-medium);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--primary-200);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-300);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+button, .btn {
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  border: none;
+  outline: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-200);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-300);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--primary-200);
+  color: var(--primary-200);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-200);
+  color: white;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+} 

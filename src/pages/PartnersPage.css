@@ -1,0 +1,288 @@
+/* Partners Page Styling */
+
+/* Page Header - inherits base styles from AboutPage.css */
+.partners-header {
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 1200 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='1200' y1='150' y2='150'%3E%3Cstop offset='0' stop-color='%233399CC'/%3E%3Cstop offset='1' stop-color='%2333CCFF'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='1200' y2='300'%3E%3Cstop offset='0' stop-color='%23006699' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23006699' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='300'/%3E%3Cg fill-opacity='0.5'%3E%3Cpath fill='url(%23b)' d='M0 0L1200 0L1200 300L0 300Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Secured Content Section */
+.secured-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.lock-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lock-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lock-icon {
+  font-size: 4rem;
+  color: var(--primary-300);
+  z-index: 10;
+}
+
+.lock-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-100);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.secured-content-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-300);
+}
+
+.secured-content-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.secured-content-info-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.secured-content-info-text a {
+  color: var(--primary-200);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.secured-content-info-text a:hover {
+  color: var(--primary-300);
+  text-decoration: underline;
+}
+
+/* Maritime Partners Info */
+/* .maritime-partners-info {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  padding-bottom: 150px;
+}
+
+.maritime-partners-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-300);
+}
+
+.maritime-partners-info p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.ship-animation-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+}
+
+.ship-element {
+  position: absolute;
+  bottom: 40px;
+  left: -50px;
+  width: 50px;
+  height: 25px;
+  background-image: url("data:image/svg+xml,%3Csvg width='50' height='25' viewBox='0 0 50 25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5,20 L10,10 L40,10 L45,20 Z' fill='%233399CC'/%3E%3Cpath d='M15,10 L15,5 L35,5 L35,10 Z' fill='%23006699'/%3E%3Cpath d='M20,5 L20,0 L25,0 L25,5 Z' fill='%233399CC'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+
+.wave-element {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-repeat: repeat-x;
+}
+
+.wave1 {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,10 Q25,0 50,10 T100,10 V20 H0 Z' fill='%2333CCFF' fill-opacity='0.3'/%3E%3C/svg%3E");
+  z-index: 3;
+  animation: wave-animation 10s infinite linear;
+}
+
+.wave2 {
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='20' viewBox='0 0 120 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,10 Q30,0 60,10 T120,10 V20 H0 Z' fill='%233399CC' fill-opacity='0.2'/%3E%3C/svg%3E");
+  z-index: 2;
+  animation: wave-animation 15s infinite linear;
+}
+
+.wave3 {
+  background-image: url("data:image/svg+xml,%3Csvg width='150' height='20' viewBox='0 0 150 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,10 Q37.5,0 75,10 T150,10 V20 H0 Z' fill='%23006699' fill-opacity='0.1'/%3E%3C/svg%3E");
+  z-index: 1;
+  animation: wave-animation 20s infinite linear;
+}
+
+@keyframes wave-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+} */
+
+/* Notify Me Section */
+/* .notify-me-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  gap: 1.5rem;
+}
+
+.notification-icon {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.notify-me-title {
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.notify-me-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+}
+
+.notify-form {
+  width: 100%;
+}
+
+.form-input-container {
+  display: flex;
+  width: 100%;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-input-container input {
+  flex-grow: 1;
+  padding: 1rem;
+  border: none;
+  background-color: white;
+  color: var(--text-primary);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.form-input-container input:focus {
+  outline: none;
+}
+
+.submit-button {
+  padding: 0 1.5rem;
+  background-color: var(--primary-200);
+  color: white;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color var(--transition-fast);
+}
+
+.submit-button:hover {
+  background-color: var(--primary-300);
+}
+
+.privacy-note {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.75rem;
+}
+
+.success-message {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-md);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+}
+
+.success-message p {
+  color: white;
+  font-size: 1.1rem;
+} */
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .secured-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .lock-animation {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .secured-content-title {
+    font-size: 1.8rem;
+  }
+  
+  .form-input-container {
+    flex-direction: column;
+  }
+  
+  .submit-button {
+    padding: 0.75rem;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .lock-container {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .lock-icon {
+    font-size: 3rem;
+  }
+  
+  .maritime-partners-info {
+    padding-bottom: 120px;
+  }
+} 

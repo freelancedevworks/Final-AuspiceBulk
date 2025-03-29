@@ -1,0 +1,140 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  transition: all var(--transition-medium);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+  z-index: 1;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-text {
+  position: relative;
+  z-index: 2;
+}
+
+/* Variants */
+.btn-primary {
+  background-color: var(--primary-200);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-300);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--primary-200);
+  color: var(--primary-200);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-200);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-text-only {
+  background-color: transparent;
+  color: var(--primary-200);
+  padding: 0.5rem;
+  border-radius: 0;
+}
+
+.btn-text-only::before {
+  display: none;
+}
+
+.btn-text-only::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-200);
+  transition: width var(--transition-medium);
+}
+
+.btn-text-only:hover {
+  color: var(--primary-300);
+}
+
+.btn-text-only:hover::after {
+  width: 100%;
+}
+
+/* Sizes */
+.btn-small {
+  padding: 0.3rem 1rem;
+  font-size: 0.875rem;
+}
+
+.btn-medium {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+}
+
+.btn-large {
+  padding: 0.7rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* With Icon */
+.btn-with-icon {
+  gap: 8px;
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-icon-right {
+  transition: transform var(--transition-fast);
+}
+
+.btn:hover .btn-icon-right {
+  transform: translateX(3px);
+}
+
+.btn-icon-left {
+  transition: transform var(--transition-fast);
+}
+
+.btn:hover .btn-icon-left {
+  transform: translateX(-3px);
+} 
