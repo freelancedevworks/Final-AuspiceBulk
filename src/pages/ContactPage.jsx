@@ -1,6 +1,7 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FiMapPin, FiPhone, FiMail, FiClock, FiSend } from 'react-icons/fi';
+import { FiMapPin, FiPhone, FiMail, FiClock, FiSend, FiCheck } from 'react-icons/fi';
+import emailjs from '@emailjs/browser';
 import Section from '../components/ui/Section';
 import Button from '../components/ui/Button';
 import './ContactPage.css';
@@ -10,6 +11,54 @@ const ContactPage = () => {
   const formInView = useInView(formRef, { once: true, amount: 0.3 });
   const mapRef = useRef(null);
   const mapInView = useInView(mapRef, { once: true, amount: 0.3 });
+
+  const [formStatus, setFormStatus] = useState({
+    submitting: false,
+    submitted: false,
+    error: null
+  });
+
+  useEffect(() => {
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setFormStatus({ submitting: true, submitted: false, error: null });
+
+    try {
+      const result = await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID|| "",
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        e.target,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      if (result.text === 'OK') {
+        setFormStatus({
+          submitting: false,
+          submitted: true,
+          error: null
+        });
+        e.target.reset();
+        
+        setTimeout(() => {
+          setFormStatus({
+            submitting: false,
+            submitted: false,
+            error: null
+          });
+        }, 5000);
+      }
+    } catch (error) {
+      console.error('Email sending error:', error);
+      setFormStatus({
+        submitting: false,
+        submitted: false,
+        error: 'Failed to send message. Please try again.'
+      });
+    }
+  };
 
   return (
     <>
@@ -132,36 +181,76 @@ const ContactPage = () => {
             ref={formRef}
           >
             <h3 className="form-title">Send us a Message</h3>
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required />
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="user_name" 
+                  placeholder="Your name" 
+                  required 
+                  disabled={formStatus.submitting}
+                />
               </div>
               
               <div className="form-group">
                 <label htmlFor="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Your email" required />
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="user_email" 
+                  placeholder="Your email" 
+                  required 
+                  disabled={formStatus.submitting}
+                />
               </div>
               
               <div className="form-group">
                 <label htmlFor="subject">Subject</label>
-                <input type="text" id="subject" name="subject" placeholder="Message subject" required />
+                <input 
+                  type="text" 
+                  id="subject" 
+                  name="subject" 
+                  placeholder="Message subject" 
+                  required 
+                  disabled={formStatus.submitting}
+                />
               </div>
               
               <div className="form-group">
                 <label htmlFor="message">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="5" 
+                  placeholder="Your message" 
+                  required 
+                  disabled={formStatus.submitting}
+                ></textarea>
               </div>
               
               <div className="form-submit">
-                <Button
-                  type="submit"
-                  variant="primary"
-                  size="large"
-                  icon={<FiSend />}
-                >
-                  Send Message
-                </Button>
+                {formStatus.error && (
+                  <div className="form-error">
+                    {formStatus.error}
+                  </div>
+                )}
+                {formStatus.submitted ? (
+                  <div className="form-success">
+                    <FiCheck /> Message sent successfully!
+                  </div>
+                ) : (
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    size="large"
+                    icon={<FiSend />}
+                    disabled={formStatus.submitting}
+                  >
+                    {formStatus.submitting ? 'Sending...' : 'Send Message'}
+                  </Button>
+                )}
               </div>
             </form>
           </motion.div>
