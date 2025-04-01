@@ -8,7 +8,7 @@ const CareerPage = () => {
     <>
       {/* Page Header */}
       <section className="page-header career-header" style={{ 
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/3.jpg)', 
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/3.jpg)', 
         backgroundSize: 'cover', 
         backgroundPosition: 'center',
         paddingTop: '60px',

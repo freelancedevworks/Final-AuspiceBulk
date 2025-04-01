@@ -13,7 +13,7 @@ const AboutPage = () => {
     <>
       {/* Page Header */}
       <section className="page-header about-header" style={{ 
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/3.jpg)', 
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/3.jpg)', 
         backgroundSize: 'cover', 
         backgroundPosition: 'center',
         paddingTop: '60px',  // Reduced from default padding
@@ -74,7 +74,7 @@ const AboutPage = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="about-image-container">
-            <img src="/assets/5.jpg" alt="Auspice Bulk Operations" className="img-fluid" />
+            <img src="/5.jpg" alt="Auspice Bulk Operations" className="img-fluid" />
             </div>
           </motion.div>
         </div>

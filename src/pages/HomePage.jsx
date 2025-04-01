@@ -13,7 +13,7 @@ const HomePage = () => {
     <>
       {/* Hero Section */}
       <section className="hero" style={{ 
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/4.jpg)', 
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/3.jpg)', 
         backgroundSize: 'cover', 
         backgroundPosition: 'center',
         display: 'flex',           
@@ -135,7 +135,7 @@ const HomePage = () => {
           </div>
           <div className="about-image">
             <div className="about-image-container">
-              <img src="/assets/2.jpg" alt="Maritime operations" className="img-fluid" />
+              <img src="/2.jpg" alt="Maritime operations" className="img-fluid" />
             </div>
           </div>
         </div>

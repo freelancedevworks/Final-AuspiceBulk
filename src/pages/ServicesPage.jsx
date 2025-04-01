@@ -1,8 +1,7 @@
-import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FiAnchor, FiGlobe, FiTrendingUp, FiPackage, FiDatabase, FiNavigation, FiSend, FiMapPin } from 'react-icons/fi';
+import { useRef } from 'react';
+import { FiGlobe, FiPackage, FiSend, FiTrendingUp } from 'react-icons/fi';
 import Section from '../components/ui/Section';
-import Button from '../components/ui/Button';
 import './ServicesPage.css';
 
 const ServicesPage = () => {
@@ -13,7 +12,7 @@ const ServicesPage = () => {
     <>
       {/* Page Header */}
       <section className="page-header services-header" style={{ 
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/3.jpg)', 
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/3.jpg)', 
         backgroundSize: 'cover', 
         backgroundPosition: 'center',
         paddingTop: '60px',  // Reduced from default padding
@@ -262,7 +261,7 @@ const ServicesPage = () => {
             transition={{ duration: 0.7 }}
           >
             <div className="service-image-container">
-              <img src="/assets/5.jpg" alt="Commercial shipping management" className="img-fluid" />
+              <img src="/5.jpg" alt="Commercial shipping management" className="img-fluid" />
             </div>
           </motion.div>
         </div>

@@ -45,9 +45,9 @@ const Header = () => {
       <div className="container header-container">
         <Link to="/" className="logo-container">
           {theme === 'light' ? (
-            <img src="/assets/Logo 2.png" alt="Auspice Bulk" className="logo-image" />
+            <img src="/Logo 2.png" alt="Auspice Bulk" className="logo-image" />
           ) : (
-            <img src="/assets/Logo 1.png" alt="Auspice Bulk" className="logo-image" />
+            <img src="/Logo 1.png" alt="Auspice Bulk" className="logo-image" />
           )}
         </Link>
 
