@@ -127,13 +127,7 @@ const ServicesPage = () => {
                 </div>
               </motion.div>
               
-              <motion.div 
-                className="service-feature"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.3 }}
-              >
+         
                 <div className="feature-icon">
                   <FiMapPin />
                 </div>
@@ -266,6 +260,7 @@ const ServicesPage = () => {
           </motion.div>
         </div>
       </Section>
+    
 
       {/* Commodities Section */}
       <Section
