@@ -23,7 +23,10 @@
   padding: 2rem;
   background-color: var(--card-bg);
   border-radius: var(--border-radius-lg);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+.career-message:hover{
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .career-icon {
@@ -52,7 +55,7 @@
   padding: 2rem;
   background-color: var(--card-bg);
   border-radius: var(--border-radius-lg);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .contact-icon {
@@ -85,7 +88,7 @@
   margin-bottom: 0.75rem;
 }
 
-.career-email {
+.career-email, .career-social-link {
   display: inline-block;
   font-size: 1.1rem;
   font-weight: 500;
@@ -94,7 +97,7 @@
   transition: color var(--transition-fast);
 }
 
-.career-email:hover {
+.career-email:hover, .career-social-link:hover {
   color: var(--primary-200);
   text-decoration: underline;
 }

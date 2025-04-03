@@ -55,6 +55,17 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   position: relative;
 }
+.service-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-medium);
+}
+
+.service-image-container:hover img {
+  transform: scale(1.05);
+}
 
 .service-features {
   display: flex;
@@ -79,6 +90,15 @@
   border-radius: 50%;
   background-color: rgba(51, 153, 204, 0.1);
   flex-shrink: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(51, 153, 204, 0.1);
+}
+
+.feature-icon:hover {
+  background-color: rgba(51, 153, 204, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(51, 153, 204, 0.2);
+  color: var(--primary-300);
 }
 
 .feature-content h4 {
@@ -95,22 +115,51 @@
 
 /* Commodities Section */
 .commodities-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .commodity-card {
   background-color: var(--card-bg);
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: var(--border-radius-md);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.411);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.3s ease;
+  width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
+
+.commodity-card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary-100), var(--primary-300));
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
 }
 
 .commodity-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  background-color: rgba(51, 153, 204, 0.03);
+  border: 1px solid rgba(51, 153, 204, 0.1);
+}
+
+.commodity-card:hover:before {
+  transform: translateY(0);
 }
 
 .commodity-card h3 {
@@ -118,22 +167,41 @@
   margin-bottom: 0.8rem;
   position: relative;
   padding-bottom: 0.8rem;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.commodity-card:hover h3 {
+  color: var(--primary-300);
 }
 
 .commodity-card h3::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 50px;
   height: 2px;
   background-color: var(--primary-200);
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.commodity-card:hover h3::after {
+  width: 80px;
+  background-color: var(--primary-300);
 }
 
 .commodity-card p {
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--text-secondary);
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.commodity-card:hover p {
+  color: var(--text-primary);
 }
 
 /* Vessel Types Section */
@@ -296,8 +364,8 @@
     order: -1;
   }
   
-  .commodities-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .commodity-card {
+    width: calc(50% - 2rem);
   }
   
   .vessel-types-grid {
@@ -310,8 +378,9 @@
     grid-template-columns: 1fr;
   }
   
-  .commodities-grid {
-    grid-template-columns: 1fr;
+  .commodity-card {
+    width: 100%;
+    max-width: 350px;
   }
 }
 

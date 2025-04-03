@@ -37,10 +37,10 @@ const HomePage = () => {
             }}
           >
             <h1 className="hero-title">
-              Navigating Trust Delivering Excellence
+              "Navigating Trust, Delivering Excellence"
             </h1>
             <p className="hero-subtitle">
-              Premier freight trading and shipping solutions across international markets
+              Freight Trading and Shipping solutions across International Markets
             </p>
             <div className="hero-buttons" style={{
               justifyContent: 'center' 
@@ -117,13 +117,12 @@ const HomePage = () => {
         <div className="about-overview">
           <div className="about-content">
             <p>
-              Auspice Bulk is a Dubai-based company specializing in freight trading and shipping operations. 
-              With years of experience in commercial ship operations, we provide world-class services to our 
-              clients across global markets.
+            Auspice Bulk is a Dubai-based company specializing in Freight Trading and Shipping Operations.
+            With years of experience in Commercial Shipping, we offer world-class services to clients across global markets.
             </p>
             <p>
-              Our team of experts brings extensive knowledge in vessel operations, international trade, and 
-              maritime logistics, ensuring efficient and reliable solutions for your shipping needs.
+            Our team of experts possesses extensive knowledge in vessel chartering, 
+            international trade, and ship management, ensuring efficient and reliable solutions for your shipping needs
             </p>
             <Button 
               to="/about" 
@@ -167,23 +166,7 @@ const HomePage = () => {
             </Button>
           </div> */}
           
-          <div className="service-card">
-            <div className="service-icon">
-              <FiGlobe />
-            </div>
-            <h3 className="service-title">Commercial Management</h3>
-            <p className="service-description">
-              Strategic commercial operations of vessels to maximize revenue and minimize costs.
-            </p>
-            <Button 
-              to="/services#commercial-management" 
-              variant="text-only"
-              icon={<FiArrowRight />}
-              iconPosition="right"
-            >
-              Learn More
-            </Button>
-          </div>
+          
           
           <div className="service-card">
             <div className="service-icon">
@@ -220,12 +203,29 @@ const HomePage = () => {
               Learn More
             </Button>
           </div>
+          <div className="service-card">
+            <div className="service-icon">
+              <FiGlobe />
+            </div>
+            <h3 className="service-title">Commercial Management</h3>
+            <p className="service-description">
+              Strategic commercial operations of vessels to maximize revenue and minimize costs.
+            </p>
+            <Button 
+              to="/services#commercial-management" 
+              variant="text-only"
+              icon={<FiArrowRight />}
+              iconPosition="right"
+            >
+              Learn More
+            </Button>
+          </div>
         </div>
       </Section>
 
       {/* Call to Action Section */}
       <section className="cta-section" style={{ 
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.7)), url(/assets/3.jpg)', 
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.7)), url(/assets/1.jpg)', 
         backgroundSize: 'cover', 
         backgroundPosition: 'center' 
       }}>
@@ -233,7 +233,7 @@ const HomePage = () => {
           <div className="cta-content">
             <h2 className="cta-title">Ready to Navigate with Auspice Bulk?</h2>
             <p className="cta-description">
-              Let us help you optimize your shipping operations and maximize efficiency. Contact our team today.
+            Let us get in touch to understand your shipping requirements…
             </p>
             <Button 
               to="/contact" 

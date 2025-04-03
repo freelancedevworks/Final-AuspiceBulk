@@ -64,7 +64,7 @@ const ContactPage = () => {
     <>
       {/* Page Header */}
       <section className="page-header contact-header" style={{ 
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/3.jpg)', 
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/9.jpg)', 
         backgroundSize: 'cover', 
         backgroundPosition: 'center',
         paddingTop: '60px',  // Reduced from default padding
@@ -100,17 +100,15 @@ const ContactPage = () => {
               transition={{ duration: 0.5 }}
             >
               <p>
-                We're always ready to assist with your shipping and freight trading inquiries. 
-                Reach out to our team using the contact details below, or fill out the form 
-                for a prompt response.
+              We are here to discuss your Freight Requirement and Ship Management queries.
               </p>
             </motion.div>
             
             <div className="contact-details">
               <motion.div 
                 className="contact-detail-item"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
                 <div className="contact-icon">
@@ -123,7 +121,7 @@ const ContactPage = () => {
                 </div>
               </motion.div>
               
-              <motion.div 
+              {/* <motion.div 
                 className="contact-detail-item"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -138,12 +136,12 @@ const ContactPage = () => {
                   <p>+971 5 22276257</p>
 
                 </div>
-              </motion.div>
+              </motion.div> */}
               
               <motion.div 
                 className="contact-detail-item"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
                 <div className="contact-icon">
@@ -151,11 +149,14 @@ const ContactPage = () => {
                 </div>
                 <div className="contact-text">
                   <h4>Email Address</h4>
-                  <p>admin@auspicebulk.com</p>
+                  <p>Chartering: dry@auspicebulk.com</p>
+                  <p>Careers: careers@auspicebulk.com</p>
+                  <p>General: admin@auspicebulk.com </p>
+                  
                 </div>
               </motion.div>
               
-              <motion.div 
+              {/* <motion.div 
                 className="contact-detail-item"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -169,7 +170,7 @@ const ContactPage = () => {
                   <p>Sunday - Thursday: 9:00 AM - 6:00 PM</p>
                   <p>Friday - Saturday: Closed</p>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </div>
           </div>
           
@@ -313,8 +314,7 @@ const ContactPage = () => {
             >
               <h3>Shipping Services</h3>
               <p>
-                Looking for reliable dry bulk transportation? Contact our commercial team to discuss 
-                your cargo requirements and shipping schedules.
+              Looking for reliable dry bulk transportation? Contact our commercial team to discuss your cargo requirements.
               </p>
             </motion.div>
             

@@ -23,69 +23,6 @@
   z-index: 0;
 }
 
-.footer-waves {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  overflow: hidden;
-  transform: translateY(-100%) scaleX(-1);
-  z-index: 6;
-}
-
-.wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 200%;
-  height: 100px;
-  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18.17 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z" fill="%23006699" opacity=".7"/></svg>') repeat-x;
-  background-size: 1200px 100px;
-  animation: wave 25s linear infinite;
-}
-
-.wave1 {
-  z-index: 8;
-  opacity: 0.8;
-  animation-delay: 0s;
-  bottom: 0;
-}
-
-.wave2 {
-  z-index: 7;
-  opacity: 0.6;
-  animation: wave-reverse 18s linear infinite;
-  animation-delay: -5s;
-  bottom: 10px;
-}
-
-.wave3 {
-  z-index: 6;
-  opacity: 0.4;
-  animation-delay: -2s;
-  bottom: 15px;
-  animation-duration: 30s;
-}
-
-@keyframes wave {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes wave-reverse {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
 .footer-container {
   transform: scaleX(-1);
   position: relative;
@@ -98,11 +35,23 @@
   width: 90%;
   max-width: 1400px;
   margin: 0 auto;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scaleX(-1) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(-1) translateY(0);
+  }
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   padding-top: 1rem;
 }
@@ -121,6 +70,11 @@
   display: inline-block;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   font-weight: 600;
+  transition: transform var(--transition-medium);
+}
+
+.footer-subtitle:hover {
+  transform: translateX(5px);
 }
 
 .footer-subtitle::after {
@@ -132,37 +86,18 @@
   height: 3px;
   background-color: var(--primary-100);
   box-shadow: 0 0 8px rgba(51, 204, 255, 0.5);
+  transition: width var(--transition-medium), background-color var(--transition-medium);
+}
+
+.footer-subtitle:hover::after {
+  width: 100%;
+  background-color: var(--primary-100);
 }
 
 .footer-description {
   margin-bottom: 25px;
   line-height: 1.6;
   font-size: 1.05rem;
-}
-
-.social-links {
-  display: flex;
-  gap: 15px;
-}
-
-.social-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 45px;
-  height: 45px;
-  background-color: rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  color: white;
-  font-size: 1.3rem;
-  transition: all var(--transition-fast);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.social-links a:hover {
-  background-color: var(--primary-100);
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .footer-links {
@@ -172,6 +107,12 @@
 
 .footer-links li {
   margin-bottom: 15px;
+  transform: translateX(0);
+  transition: transform var(--transition-medium);
+}
+
+.footer-links li:hover {
+  transform: translateX(5px);
 }
 
 .footer-links a {
@@ -194,10 +135,12 @@
 .footer-links a:hover {
   color: white;
   padding-left: 22px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 .footer-links a:hover::before {
   transform: translateX(5px);
+  color: var(--primary-100);
 }
 
 .contact-info {
@@ -211,12 +154,12 @@
   background-color: rgba(255, 255, 255, 0.08);
   padding: 12px 18px;
   border-radius: var(--border-radius-md);
-  transition: all var(--transition-medium);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .contact-item:hover {
   background-color: rgba(255, 255, 255, 0.15);
-  transform: translateX(5px);
+  transform: translateX(5px) scale(1.02);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -226,6 +169,12 @@
   color: var(--primary-100);
   font-size: 1.5rem;
   filter: drop-shadow(0 0 3px rgba(51, 204, 255, 0.3));
+  transition: transform var(--transition-medium), filter var(--transition-medium);
+}
+
+.contact-item:hover .contact-icon {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px rgba(51, 204, 255, 0.6));
 }
 
 .footer-bottom {
@@ -234,7 +183,6 @@
   align-items: center;
   padding-top: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  /* background-color: rgba(0, 0, 0, 0.2); */
   margin-top: 20px;
   padding: 25px;
   border-radius: var(--border-radius-md);
@@ -244,6 +192,11 @@
   margin: 0;
   font-size: 0.95rem;
   color: var(--text-light);
+  transition: color var(--transition-medium);
+}
+
+.copyright:hover {
+  color: white;
 }
 
 .legal-info {
@@ -253,12 +206,63 @@
   opacity: 0.9;
 }
 
+.social-links-bottom {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links-bottom a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  color: white;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-links-bottom a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-100);
+  transform: scale(0);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.social-links-bottom a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: white;
+}
+
+.social-links-bottom a:hover::before {
+  transform: scale(1);
+}
+
 .footer-logo-image {
   height: 45px;
   max-width: 100%;
   object-fit: contain;
   margin-bottom: 0.8rem;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  transition: transform var(--transition-medium), filter var(--transition-medium);
+}
+
+.footer-logo-image:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3)) brightness(1.2);
 }
 
 @media (max-width: 1024px) {
@@ -270,8 +274,13 @@
 
 @media (max-width: 768px) {
   .footer {
-    padding: 80px 0 30px;
+    padding: 60px 0 30px;
     margin-top: 1px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
   }
   
   .footer-bottom {
@@ -287,6 +296,11 @@
   .footer-container {
     width: 95%;
     padding: 20px;
+  }
+  
+  .social-links-bottom {
+    justify-content: center;
+    margin-top: 10px;
   }
 }
 

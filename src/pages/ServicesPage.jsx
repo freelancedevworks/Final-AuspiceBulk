@@ -12,7 +12,7 @@ const ServicesPage = () => {
     <>
       {/* Page Header */}
       <section className="page-header services-header" style={{ 
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/3.jpg)', 
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/9.jpg)', 
         backgroundSize: 'cover', 
         backgroundPosition: 'center',
         paddingTop: '60px',  // Reduced from default padding
@@ -47,13 +47,10 @@ const ServicesPage = () => {
             transition={{ duration: 0.5 }}
           >
             <p>
-              Auspice Bulk provides comprehensive shipping and freight trading services with a focus 
-              on dry bulk transportation. Our experienced team offers end-to-end solutions designed to 
-              optimize your maritime operations, minimize costs, and maximize efficiency.
+            Auspice Bulk provides comprehensive shipping and freight trading services, emphasizing in dry bulk transportation. Our experienced team offers end-to-end solutions designed to optimize your maritime operations, and maximize efficiency.
             </p>
             <p>
-              Our services are tailored to meet the unique requirements of each client, with a commitment 
-              to reliability, transparency, and excellence in every aspect of our work.
+            Our services are tailored to meet the unique needs of each client, with a steadfast commitment to reliability, transparency, and excellence in every aspect of our work.
             </p>
           </motion.div>
         </div>
@@ -157,12 +154,89 @@ const ServicesPage = () => {
         </div>
       </Section> */}
 
+{/* Commodities Section */}
+<Section
+        title="Dry Bulk Expertise"
+        subtitle="Commodities We Handle"
+        background="light"
+        
+      >
+        <div className="commodities-grid">
+          <motion.div 
+            className="commodity-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+          >
+            <h3>Mineral Ores</h3>
+            <p>Metallurgical flux, Iron ore, bauxite, manganese, and other mineral commodities transported with expertise.</p>
+          </motion.div>
+          
+          <motion.div 
+            className="commodity-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+          >
+            <h3>Coal</h3>
+            <p>Coking, Thermal and metallurgical coal shipments managed with attention to cargo-specific requirements.</p>
+          </motion.div>
+          
+          <motion.div 
+            className="commodity-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+          >
+            <h3>Fertilizers</h3>
+            <p>Urea, Phosphates, potash, and other agricultural inputs transported safely and efficiently.</p>
+          </motion.div>
+          
+          <motion.div 
+            className="commodity-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+          >
+            <h3>Agricultural Products</h3>
+            <p>Grains, sugar, and other agricultural commodities shipped with proper handling procedures.</p>
+          </motion.div>
+          
+          <motion.div 
+            className="commodity-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.4 }}
+          >
+            <h3>Steel Products</h3>
+            <p>Steel coils, plates, and other metal products transported with specialized care.</p>
+          </motion.div>
+          
+          {/* <motion.div 
+            className="commodity-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.5 }}
+          >
+            <h3>Forest Products</h3>
+            <p>Timber, pulp, and other forest-derived commodities shipped with proper storage considerations.</p>
+          </motion.div> */}
+        </div>
+      </Section>
+
+
       {/* Commercial Management */}
       <Section
         title="Commercial Management"
         subtitle="Strategic Shipping"
         id="commercial-management"
-        background="light"
+        
       >
         <div className="service-detail-grid reverse">
           <div className="service-content">
@@ -255,87 +329,14 @@ const ServicesPage = () => {
             transition={{ duration: 0.7 }}
           >
             <div className="service-image-container">
-              <img src="/5.jpg" alt="Commercial shipping management" className="img-fluid" />
+              <img src="/4.jpg" alt="Commercial shipping management" className="img-fluid" />
             </div>
           </motion.div>
         </div>
       </Section>
     
 
-      {/* Commodities Section */}
-      <Section
-        title="Dry Bulk Expertise"
-        subtitle="Commodities We Handle"
-        
-      >
-        <div className="commodities-grid">
-          <motion.div 
-            className="commodity-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-          >
-            <h3>Mineral Ores</h3>
-            <p>Metallurgical flux, Iron ore, bauxite, manganese, and other mineral commodities transported with expertise.</p>
-          </motion.div>
-          
-          <motion.div 
-            className="commodity-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-          >
-            <h3>Coal</h3>
-            <p>Coking, Thermal and metallurgical coal shipments managed with attention to cargo-specific requirements.</p>
-          </motion.div>
-          
-          <motion.div 
-            className="commodity-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-          >
-            <h3>Fertilizers</h3>
-            <p>Urea, Phosphates, potash, and other agricultural inputs transported safely and efficiently.</p>
-          </motion.div>
-          
-          <motion.div 
-            className="commodity-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-          >
-            <h3>Agricultural Products</h3>
-            <p>Grains, sugar, and other agricultural commodities shipped with proper handling procedures.</p>
-          </motion.div>
-          
-          <motion.div 
-            className="commodity-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.4 }}
-          >
-            <h3>Steel Products</h3>
-            <p>Steel coils, plates, and other metal products transported with specialized care.</p>
-          </motion.div>
-          
-          {/* <motion.div 
-            className="commodity-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.5 }}
-          >
-            <h3>Forest Products</h3>
-            <p>Timber, pulp, and other forest-derived commodities shipped with proper storage considerations.</p>
-          </motion.div> */}
-        </div>
-      </Section>
+      
 
       {/* Vessel Types */}
       {/* <Section

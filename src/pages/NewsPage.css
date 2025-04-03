@@ -71,7 +71,7 @@
 
 .radio-icon {
   font-size: 3rem;
-  color: #537791;
+  color: var(--primary-200, #537791);
   position: relative;
   z-index: 2;
 }
@@ -81,26 +81,26 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 2px solid #2a4c64;
+  border: 2px solid var(--primary-300, #2a4c64);
 }
 
 .stay-tuned-title {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: #29455c;
+  color: var(--text-primary, #29455c);
   letter-spacing: 1px;
 }
 
 .stay-tuned-subtitle {
   font-size: 1.5rem;
-  color: #416077;
+  color: var(--text-primary, #416077);
   margin-bottom: 1rem;
 }
 
 .stay-tuned-description {
   font-size: 1.1rem;
-  color: #555;
+  color: var(--text-secondary, #555);
   line-height: 1.6;
   max-width: 80%;
   margin: 0 auto;
@@ -109,16 +109,17 @@
 /* News Categories */
 .news-categories {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
   margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 
 .news-category {
-  background-color: white;
+  background-color: var(--card-bg, white);
   border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -155,12 +156,52 @@
 .news-category h3 {
   font-size: 1.4rem;
   margin-bottom: 0.8rem;
-  color: #0a1e2e;
+  color: var(--primary-300, #0a1e2e);
 }
 
 .news-category p {
-  color: #555;
+  color: var(--text-secondary, #555);
   line-height: 1.5;
+}
+
+/* LinkedIn Follow Section */
+.linkedin-follow-container {
+  text-align: center;
+  padding: 2rem 1rem;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.linkedin-follow-container h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-300, #0a1e2e);
+}
+
+.linkedin-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0072b1;
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0, 114, 177, 0.3);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.linkedin-button:hover {
+  background-color: #005b8e;
+  box-shadow: 0 8px 20px rgba(0, 114, 177, 0.4);
+  color: white;
+}
+
+.linkedin-icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
 }
 
 /* Newsletter Section */
@@ -295,6 +336,11 @@
   
   .news-categories {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  .linkedin-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
   }
 }
 

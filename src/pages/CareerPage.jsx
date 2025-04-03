@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FiBriefcase, FiMail } from 'react-icons/fi';
+import { FiBriefcase, FiMail, FiLinkedin } from 'react-icons/fi';
 import Section from '../components/ui/Section';
 import './CareerPage.css';
 
@@ -8,7 +8,7 @@ const CareerPage = () => {
     <>
       {/* Page Header */}
       <section className="page-header career-header" style={{ 
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/3.jpg)', 
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/9.jpg)', 
         backgroundSize: 'cover', 
         backgroundPosition: 'center',
         paddingTop: '60px',
@@ -46,25 +46,39 @@ const CareerPage = () => {
               <FiBriefcase />
             </div>
             <p className="career-text">
-              At Auspice Bulk, we're always looking for talented individuals to join our global team. 
+              At Auspice Bulk, we're always seeking for talented individuals to join our global team. 
               We value expertise, dedication, and innovative thinking in the maritime industry.
             </p>
           </motion.div>
           
           <motion.div
-            className="career-contact"
+            className="career-message"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <div className="contact-icon">
+            <div className="career-icon">
               <FiMail />
             </div>
-            <div className="contact-text">
-              <h4>Get in Touch</h4>
-              <p>For career inquiries, please contact our HR department:</p>
-              <a href="mailto:hr@auspicebulk.com" className="career-email">hr@auspicebulk.com</a>
+            <h4>Get in Touch</h4>
+            <p className="career-text">For career inquiries, please contact our HR department:</p>
+            <a href="mailto:careers@auspicebulk.com" className="career-email">careers@auspicebulk.com</a>
+          </motion.div>
+          
+          <motion.div
+            className="career-message"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <div className="career-icon">
+              <FiLinkedin />
             </div>
+            <h4>Connect With Us</h4>
+            <p className="career-text">Follow our company page for the latest opportunities and updates:</p>
+            <a href="https://www.linkedin.com/company/auspice-bulk" target="_blank" rel="noopener noreferrer" className="career-social-link">
+              Auspice Bulk on LinkedIn
+            </a>
           </motion.div>
         </div>
       </Section>
