@@ -1,8 +1,7 @@
-import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FiAnchor, FiGlobe, FiTrendingUp, FiPackage, FiDatabase, FiNavigation, FiSend, FiMapPin } from 'react-icons/fi';
+import { useRef } from 'react';
+import { FiGlobe, FiPackage, FiSend, FiTrendingUp } from 'react-icons/fi';
 import Section from '../components/ui/Section';
-import Button from '../components/ui/Button';
 import './ServicesPage.css';
 
 const ServicesPage = () => {
@@ -13,7 +12,7 @@ const ServicesPage = () => {
     <>
       {/* Page Header */}
       <section className="page-header services-header" style={{ 
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/3.jpg)', 
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/55.jpg)', 
         backgroundSize: 'cover', 
         backgroundPosition: 'center',
         paddingTop: '60px',  // Reduced from default padding
@@ -48,13 +47,10 @@ const ServicesPage = () => {
             transition={{ duration: 0.5 }}
           >
             <p>
-              Auspice Bulk provides comprehensive shipping and freight trading services with a focus 
-              on dry bulk transportation. Our experienced team offers end-to-end solutions designed to 
-              optimize your maritime operations, minimize costs, and maximize efficiency.
+            Auspice Bulk provides comprehensive shipping and freight trading services, emphasizing in dry bulk transportation. Our experienced team offers end-to-end solutions designed to optimize your maritime operations, and maximize efficiency.
             </p>
             <p>
-              Our services are tailored to meet the unique requirements of each client, with a commitment 
-              to reliability, transparency, and excellence in every aspect of our work.
+            Our services are tailored to meet the unique needs of each client, with a steadfast commitment to reliability, transparency, and excellence in every aspect of our work.
             </p>
           </motion.div>
         </div>
@@ -128,13 +124,7 @@ const ServicesPage = () => {
                 </div>
               </motion.div>
               
-              <motion.div 
-                className="service-feature"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.3 }}
-              >
+         
                 <div className="feature-icon">
                   <FiMapPin />
                 </div>
@@ -164,114 +154,11 @@ const ServicesPage = () => {
         </div>
       </Section> */}
 
-      {/* Commercial Management */}
-      <Section
-        title="Commercial Management"
-        subtitle="Strategic Shipping"
-        id="commercial-management"
-        background="light"
-      >
-        <div className="service-detail-grid reverse">
-          <div className="service-content">
-            <motion.div 
-              className="service-intro"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <p>
-                Our commercial management services focus on maximizing vessel profitability through 
-                strategic planning, market analysis, and revenue optimization. We handle all commercial 
-                aspects of vessel operation to ensure optimal financial performance.
-              </p>
-            </motion.div>
-            
-            <div className="service-features">
-              <motion.div 
-                className="service-feature"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-              >
-                <div className="feature-icon">
-                  <FiGlobe />
-                </div>
-                <div className="feature-content">
-                  <h4>Market Analysis</h4>
-                  <p>Continuous monitoring of shipping markets to identify opportunities and optimize chartering decisions.</p>
-                </div>
-              </motion.div>
-              
-              <motion.div 
-                className="service-feature"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.2 }}
-              >
-                <div className="feature-icon">
-                  <FiTrendingUp />
-                </div>
-                <div className="feature-content">
-                  <h4>Revenue Optimization</h4>
-                  <p>Strategic vessel positioning and charter selection to maximize revenue and minimize ballast time.</p>
-                </div>
-              </motion.div>
-              
-              <motion.div 
-                className="service-feature"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.3 }}
-              >
-                <div className="feature-icon">
-                  <FiSend />
-                </div>
-                <div className="feature-content">
-                  <h4>Freight Trading</h4>
-                  <p>Expert negotiation of freight contracts to secure optimal terms and rates for our clients.</p>
-                </div>
-              </motion.div>
-              
-              <motion.div 
-                className="service-feature"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.4 }}
-              >
-                <div className="feature-icon">
-                  <FiPackage />
-                </div>
-                <div className="feature-content">
-                  <h4>Cargo Procurement</h4>
-                  <p>Identifying and securing suitable cargoes to maximize vessel utilization and profitability.</p>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-          
-          <motion.div 
-            className="service-image"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <div className="service-image-container">
-              <img src="/assets/5.jpg" alt="Commercial shipping management" className="img-fluid" />
-            </div>
-          </motion.div>
-        </div>
-      </Section>
-
-      {/* Commodities Section */}
-      <Section
+{/* Commodities Section */}
+<Section
         title="Dry Bulk Expertise"
         subtitle="Commodities We Handle"
+        background="light"
         
       >
         <div className="commodities-grid">
@@ -342,6 +229,113 @@ const ServicesPage = () => {
           </motion.div> */}
         </div>
       </Section>
+
+
+      {/* Commercial Management */}
+      <Section
+        title="Commercial Management"
+        subtitle="Strategic Shipping"
+        id="commercial-management"
+        
+      >
+        <div className="service-detail-grid reverse">
+          <div className="service-content">
+            <motion.div 
+              className="service-intro"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <p>
+                Our commercial management services focus on maximizing vessel profitability through 
+                strategic planning, market analysis, and revenue optimization. We handle all commercial 
+                aspects of vessel operation to ensure optimal financial performance.
+              </p>
+            </motion.div>
+            
+            <div className="service-features">
+              <motion.div 
+                className="service-feature"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+              >
+                <div className="feature-icon">
+                  <FiGlobe />
+                </div>
+                <div className="feature-content">
+                  <h4>Market Analysis</h4>
+                  <p>Continuous monitoring of shipping markets to identify opportunities and optimize chartering decisions.</p>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="service-feature"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+              >
+                <div className="feature-icon">
+                  <FiSend />
+                </div>
+                <div className="feature-content">
+                  <h4>Freight Trading</h4>
+                  <p>Expert negotiation of freight contracts to secure optimal terms and rates for our clients.</p>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="service-feature"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.4 }}
+              >
+                <div className="feature-icon">
+                  <FiPackage />
+                </div>
+                <div className="feature-content">
+                  <h4>Cargo Procurement</h4>
+                  <p>Identifying and securing suitable cargoes to maximize vessel utilization and profitability.</p>
+                </div>
+              </motion.div>
+              <motion.div 
+                className="service-feature"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+              >
+                <div className="feature-icon">
+                  <FiTrendingUp />
+                </div>
+                <div className="feature-content">
+                  <h4>Revenue Optimization</h4>
+                  <p>Strategic vessel positioning and charter selection to maximize revenue and minimize ballast time.</p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+          
+          <motion.div 
+            className="service-image"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <div className="service-image-container">
+              <img src="/4.jpg" alt="Commercial shipping management" className="img-fluid" />
+            </div>
+          </motion.div>
+        </div>
+      </Section>
+    
+
+      
 
       {/* Vessel Types */}
       {/* <Section

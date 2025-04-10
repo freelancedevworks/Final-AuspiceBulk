@@ -1,6 +1,7 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FiMapPin, FiPhone, FiMail, FiClock, FiSend } from 'react-icons/fi';
+import { FiMapPin, FiPhone, FiMail, FiClock, FiSend, FiCheck } from 'react-icons/fi';
+import emailjs from '@emailjs/browser';
 import Section from '../components/ui/Section';
 import Button from '../components/ui/Button';
 import './ContactPage.css';
@@ -10,12 +11,62 @@ const ContactPage = () => {
   const formInView = useInView(formRef, { once: true, amount: 0.3 });
   const mapRef = useRef(null);
   const mapInView = useInView(mapRef, { once: true, amount: 0.3 });
+  const contactDetailsRef = useRef(null);
+  const contactDetailsInView = useInView(contactDetailsRef, { once: true, amount: 0.3 });
+
+  const [formStatus, setFormStatus] = useState({
+    submitting: false,
+    submitted: false,
+    error: null
+  });
+
+  useEffect(() => {
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setFormStatus({ submitting: true, submitted: false, error: null });
+
+    try {
+      const result = await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID|| "",
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        e.target,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      if (result.text === 'OK') {
+        setFormStatus({
+          submitting: false,
+          submitted: true,
+          error: null
+        });
+        e.target.reset();
+        
+        setTimeout(() => {
+          setFormStatus({
+            submitting: false,
+            submitted: false,
+            error: null
+          });
+        }, 5000);
+      }
+    } catch (error) {
+      console.error('Email sending error:', error);
+      setFormStatus({
+        submitting: false,
+        submitted: false,
+        error: 'Failed to send message. Please try again.'
+      });
+    }
+  };
 
   return (
     <>
       {/* Page Header */}
       <section className="page-header contact-header" style={{ 
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/3.jpg)', 
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/55.jpg)', 
         backgroundSize: 'cover', 
         backgroundPosition: 'center',
         paddingTop: '60px',  // Reduced from default padding
@@ -41,6 +92,7 @@ const ContactPage = () => {
       <Section
         title="Get in Touch"
         subtitle="Our Information"
+        className="contact-section"
       >
         <div className="contact-grid">
           <div className="contact-info">
@@ -50,31 +102,32 @@ const ContactPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <p>
-                We're always ready to assist with your shipping and freight trading inquiries. 
-                Reach out to our team using the contact details below, or fill out the form 
-                for a prompt response.
+              <p className="intro-text">
+                We are here to discuss your Freight Requirement and Ship Management queries.
               </p>
             </motion.div>
             
-            <div className="contact-details">
+            <div className="contact-details" ref={contactDetailsRef}>
               <motion.div 
                 className="contact-detail-item"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={contactDetailsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
                 <div className="contact-icon">
                   <FiMapPin />
                 </div>
                 <div className="contact-text">
-                  <h4>Office Address</h4>
-                  <p>Regd. Office: 37Th Floor, JBC 2, Cluster V, Jumeirah Lake Towers</p>
-                  <p>Dubai, United Arab Emirates</p>
+                  <h4 className="detail-title">Office Address</h4>
+                  <p className="detail-text">Auspice Bulk DMCC</p>
+                  <p className="detail-text">3703, JBC -2, Cluster V</p>
+                  <p className="detail-text">Jumeirah Lake Towers</p>
+                  <p className="detail-text">P.O. Box 338455</p>
+                  <p className="detail-text">Dubai, UAE</p>
                 </div>
               </motion.div>
               
-              <motion.div 
+              {/* <motion.div 
                 className="contact-detail-item"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -89,24 +142,35 @@ const ContactPage = () => {
                   <p>+971 5 22276257</p>
 
                 </div>
-              </motion.div>
+              </motion.div> */}
               
               <motion.div 
                 className="contact-detail-item"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={contactDetailsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
                 <div className="contact-icon">
                   <FiMail />
                 </div>
                 <div className="contact-text">
-                  <h4>Email Address</h4>
-                  <p>admin@auspicebulk.com</p>
+                  <h4 className="detail-title">Email Address</h4>
+                  <p className="detail-text">
+                    <span className="email-label">Chartering:</span>
+                    <a href="mailto:dry@auspicebulk.com" className="contact-email">dry@auspicebulk.com</a>
+                  </p>
+                  <p className="detail-text">
+                    <span className="email-label">Careers:</span>
+                    <a href="mailto:careers@auspicebulk.com" className="contact-email">careers@auspicebulk.com</a>
+                  </p>
+                  <p className="detail-text">
+                    <span className="email-label">General:</span>
+                    <a href="mailto:admin@auspicebulk.com" className="contact-email">admin@auspicebulk.com</a>
+                  </p>
                 </div>
               </motion.div>
               
-              <motion.div 
+              {/* <motion.div 
                 className="contact-detail-item"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -120,7 +184,7 @@ const ContactPage = () => {
                   <p>Sunday - Thursday: 9:00 AM - 6:00 PM</p>
                   <p>Friday - Saturday: Closed</p>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </div>
           </div>
           
@@ -132,36 +196,76 @@ const ContactPage = () => {
             ref={formRef}
           >
             <h3 className="form-title">Send us a Message</h3>
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required />
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="user_name" 
+                  placeholder="Your name" 
+                  required 
+                  disabled={formStatus.submitting}
+                />
               </div>
               
               <div className="form-group">
                 <label htmlFor="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Your email" required />
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="user_email" 
+                  placeholder="Your email" 
+                  required 
+                  disabled={formStatus.submitting}
+                />
               </div>
               
               <div className="form-group">
                 <label htmlFor="subject">Subject</label>
-                <input type="text" id="subject" name="subject" placeholder="Message subject" required />
+                <input 
+                  type="text" 
+                  id="subject" 
+                  name="subject" 
+                  placeholder="Message subject" 
+                  required 
+                  disabled={formStatus.submitting}
+                />
               </div>
               
               <div className="form-group">
                 <label htmlFor="message">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="5" 
+                  placeholder="Your message" 
+                  required 
+                  disabled={formStatus.submitting}
+                ></textarea>
               </div>
               
               <div className="form-submit">
-                <Button
-                  type="submit"
-                  variant="primary"
-                  size="large"
-                  icon={<FiSend />}
-                >
-                  Send Message
-                </Button>
+                {formStatus.error && (
+                  <div className="form-error">
+                    {formStatus.error}
+                  </div>
+                )}
+                {formStatus.submitted ? (
+                  <div className="form-success">
+                    <FiCheck /> Message sent successfully!
+                  </div>
+                ) : (
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    size="large"
+                    icon={<FiSend />}
+                    disabled={formStatus.submitting}
+                  >
+                    {formStatus.submitting ? 'Sending...' : 'Send Message'}
+                  </Button>
+                )}
               </div>
             </form>
           </motion.div>
@@ -224,8 +328,7 @@ const ContactPage = () => {
             >
               <h3>Shipping Services</h3>
               <p>
-                Looking for reliable dry bulk transportation? Contact our commercial team to discuss 
-                your cargo requirements and shipping schedules.
+              Looking for reliable dry bulk transportation? Contact our commercial team to discuss your cargo requirements.
               </p>
             </motion.div>
             

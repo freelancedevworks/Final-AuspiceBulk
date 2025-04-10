@@ -40,14 +40,61 @@ const Header = () => {
     };
   }, [mobileMenuOpen]);
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { 
+      opacity: 0,
+      y: -20,
+      transition: { staggerChildren: 0.07, delayChildren: 0.2 }
+    },
+    visible: { 
+      opacity: 1,
+      y: 0,
+      transition: { 
+        type: "spring",
+        stiffness: 300,
+        damping: 24,
+        staggerChildren: 0.09,
+        delayChildren: 0.2
+      }
+    },
+    exit: { 
+      opacity: 0,
+      y: -20,
+      transition: { staggerChildren: 0.05, staggerDirection: -1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { type: "spring", stiffness: 300, damping: 24 }
+    },
+    exit: { y: -20, opacity: 0 }
+  };
+
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container header-container">
         <Link to="/" className="logo-container">
           {theme === 'light' ? (
-            <img src="/assets/Logo 2.png" alt="Auspice Bulk" className="logo-image" />
+            <motion.img 
+              src="/Logo 2.png" 
+              alt="Auspice Bulk" 
+              className="logo-image" 
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            />
           ) : (
-            <img src="/assets/Logo 1.png" alt="Auspice Bulk" className="logo-image" />
+            <motion.img 
+              src="/Logo 1.png" 
+              alt="Auspice Bulk" 
+              className="logo-image" 
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            />
           )}
         </Link>
 
@@ -68,11 +115,11 @@ const Header = () => {
                 Services
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink to="/partners" className={({ isActive }) => isActive ? 'active' : ''}>
                 Partners
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink to="/fleet" className={({ isActive }) => isActive ? 'active' : ''}>
                 Fleet
@@ -97,21 +144,25 @@ const Header = () => {
         </nav>
 
         <div className="header-controls">
-          <button 
+          <motion.button 
             className="theme-toggle"
             onClick={toggleTheme}
             aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+            whileHover={{ scale: 1.15, rotate: 5 }}
+            whileTap={{ scale: 0.95 }}
           >
             {theme === 'light' ? <FiMoon /> : <FiSun />}
-          </button>
+          </motion.button>
 
-          <button 
+          <motion.button 
             className="mobile-menu-toggle"
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
+            whileHover={{ scale: 1.15, rotate: 5 }}
+            whileTap={{ scale: 0.95 }}
           >
             {mobileMenuOpen ? <FiX /> : <FiMenu />}
-          </button>
+          </motion.button>
         </div>
       </div>
 
@@ -119,13 +170,13 @@ const Header = () => {
         {mobileMenuOpen && (
           <motion.div 
             className="mobile-menu"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={containerVariants}
           >
-            <ul className="mobile-nav-links">
-              <li>
+            <motion.ul className="mobile-nav-links">
+              <motion.li variants={itemVariants}>
                 <NavLink 
                   to="/" 
                   className={({ isActive }) => isActive ? 'active' : ''}
@@ -133,8 +184,8 @@ const Header = () => {
                 >
                   Home
                 </NavLink>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li variants={itemVariants}>
                 <NavLink 
                   to="/about" 
                   className={({ isActive }) => isActive ? 'active' : ''}
@@ -142,8 +193,8 @@ const Header = () => {
                 >
                   About Us
                 </NavLink>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li variants={itemVariants}>
                 <NavLink 
                   to="/services" 
                   className={({ isActive }) => isActive ? 'active' : ''}
@@ -151,8 +202,8 @@ const Header = () => {
                 >
                   Services
                 </NavLink>
-              </li>
-              <li>
+              </motion.li>
+              {/* <motion.li variants={itemVariants}>
                 <NavLink 
                   to="/partners" 
                   className={({ isActive }) => isActive ? 'active' : ''}
@@ -160,8 +211,8 @@ const Header = () => {
                 >
                   Partners
                 </NavLink>
-              </li>
-              <li>
+              </motion.li> */}
+              <motion.li variants={itemVariants}>
                 <NavLink 
                   to="/fleet" 
                   className={({ isActive }) => isActive ? 'active' : ''}
@@ -169,8 +220,8 @@ const Header = () => {
                 >
                   Fleet
                 </NavLink>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li variants={itemVariants}>
                 <NavLink 
                   to="/news" 
                   className={({ isActive }) => isActive ? 'active' : ''}
@@ -178,8 +229,8 @@ const Header = () => {
                 >
                   News
                 </NavLink>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li variants={itemVariants}>
                 <NavLink 
                   to="/careers" 
                   className={({ isActive }) => isActive ? 'active' : ''}
@@ -187,8 +238,8 @@ const Header = () => {
                 >
                   Careers
                 </NavLink>
-              </li>
-              <li>
+              </motion.li>
+              {/* <motion.li variants={itemVariants}>
                 <NavLink 
                   to="/policy" 
                   className={({ isActive }) => isActive ? 'active' : ''}
@@ -196,8 +247,8 @@ const Header = () => {
                 >
                   Policies
                 </NavLink>
-              </li>
-              <li>
+              </motion.li> */}
+              <motion.li variants={itemVariants}>
                 <NavLink 
                   to="/contact" 
                   className={({ isActive }) => isActive ? 'active' : ''}
@@ -205,8 +256,8 @@ const Header = () => {
                 >
                   Contact
                 </NavLink>
-              </li>
-            </ul>
+              </motion.li>
+            </motion.ul>
           </motion.div>
         )}
       </AnimatePresence>

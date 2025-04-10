@@ -84,7 +84,7 @@
 }
 
 .section-gradient {
-  background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-300) 100%);
+  background: linear-gradient(135deg, rgba(0, 51, 102, 0.95) 0%, rgba(0, 102, 153, 0.95) 100%);
   color: white;
 }
 
@@ -109,5 +109,11 @@
   .section-title {
     font-size: 2rem;
     padding-bottom: 1rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .section-gradient {
+    background: linear-gradient(135deg, rgba(0, 40, 80, 0.98) 0%, rgba(0, 80, 120, 0.98) 100%);
   }
 } 
