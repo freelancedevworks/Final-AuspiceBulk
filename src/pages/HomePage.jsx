@@ -20,8 +20,10 @@ const HomePage = () => {
             loop 
             playsInline 
             className="hero-video"
+            poster="/55.jpg"
           >
-            <source src="/69.mp4" type="video/mp4" />
+            <source src="/videos/69.mp4" type="video/mp4" />
+            <source src="/videos/69.webm" type="video/webm" />
             Your browser does not support the video tag.
           </video>
           <div className="hero-overlay"></div>
