@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiRadio, FiMail, FiArrowRight } from 'react-icons/fi';
+import { FiRadio, FiMail, FiArrowRight, FiLinkedin } from 'react-icons/fi';
 import Section from '../components/ui/Section';
 // import Button from '../components/ui/Button';
 import './NewsPage.css';
@@ -21,7 +21,13 @@ const NewsPage = () => {
   return (
     <>
       {/* Page Header */}
-      <section className="page-header news-header">
+      <section className="page-header news-header" style={{ 
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/55.jpg)', 
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center',
+        paddingTop: '60px',  // Reduced from default padding
+        paddingBottom: '60px' // Reduced from default padding 
+      }}>
         <div className="container">
           <motion.div
             className="page-header-content"
@@ -115,7 +121,7 @@ const NewsPage = () => {
           >
             We're currently developing our news platform to bring you the latest updates
             from Auspice Bulk and the maritime industry. Stay tuned for company announcements,
-            industry insights, and market trends.
+            industry news.
           </motion.p>
         </div>
       </Section>
@@ -137,12 +143,11 @@ const NewsPage = () => {
             <div className="category-icon company-updates"></div>
             <h3>Company Updates</h3>
             <p>
-              Stay informed about Auspice Bulk's latest developments, new partnerships, 
-              and strategic initiatives. Follow our journey as we expand our services and fleet.
+            Stay informed about Auspice Bulk's latest developments, new partnerships, and strategic initiatives. Follow our journey as we expand our services and fleet.
             </p>
           </motion.div>
           
-          <motion.div 
+          {/* <motion.div 
             className="news-category"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -155,7 +160,7 @@ const NewsPage = () => {
               Gain valuable insights into dry bulk shipping markets, commodity trends, and 
               trade flow analysis from our experienced team of maritime professionals.
             </p>
-          </motion.div>
+          </motion.div> */}
           
           <motion.div 
             className="news-category"
@@ -167,8 +172,7 @@ const NewsPage = () => {
             <div className="category-icon industry-news"></div>
             <h3>Industry News</h3>
             <p>
-              Keep up with the latest developments in the maritime industry, including 
-              regulatory changes, technological advancements, and sustainability initiatives.
+            Stay updated on the latest developments in the maritime industry, including regulatory changes, technological advancements, and sustainability initiatives.
             </p>
           </motion.div>
           
@@ -182,11 +186,32 @@ const NewsPage = () => {
             <div className="category-icon event-coverage"></div>
             <h3>Event Coverage</h3>
             <p>
-              Follow our participation in industry conferences, trade shows, and networking 
-              events. Get insights from key maritime gatherings and expert panels.
+            Follow our participation in industry conferences, trade shows, and networking events. Get insights from key maritime gatherings and expert panels.
             </p>
           </motion.div>
         </div>
+
+        <motion.div 
+          className="linkedin-follow-container"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <h3>For more updates, follow us on LinkedIn</h3>
+          <motion.a 
+            href="https://www.linkedin.com/company/auspicebulk/about/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="linkedin-button"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
+            <FiLinkedin className="linkedin-icon" />
+            <span>Connect on LinkedIn</span>
+          </motion.a>
+        </motion.div>
       </Section>
 
       {/* Newsletter Section */}

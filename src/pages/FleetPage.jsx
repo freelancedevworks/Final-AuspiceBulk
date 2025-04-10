@@ -9,7 +9,7 @@ const FleetPage = () => {
     <>
       {/* Page Header */}
       <section className="page-header fleet-header" style={{ 
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/3.jpg)', 
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/55.jpg)', 
         backgroundSize: 'cover', 
         backgroundPosition: 'center',
         paddingTop: '60px',  // Reduced from default padding
@@ -40,7 +40,7 @@ const FleetPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="vessel-silhouette-container">
+            {/* <div className="vessel-silhouette-container">
               <motion.div 
                 className="vessel-silhouette"
                 animate={{ 
@@ -66,7 +66,7 @@ const FleetPage = () => {
                   }}
                 />
               </div>
-            </div>
+            </div> */}
             
             <motion.h2
               className="coming-soon-title"
@@ -74,28 +74,32 @@ const FleetPage = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              Building Up Soon
+              "Arriving Soon"
             </motion.h2>
             
             <motion.div
               className="progress-indicator"
               initial={{ width: 0 }}
-              animate={{ width: '75%' }}
+              animate={{ width: '100%' }}
               transition={{ duration: 1.5, delay: 0.5 }}
             >
+              <motion.div 
+                className="progress-bar"
+                initial={{ width: 0 }}
+                animate={{ width: '75%' }}
+                transition={{ duration: 1.5, delay: 0.5 }}
+              ></motion.div>
               <div className="progress-text">75% Complete</div>
             </motion.div>
             
-            <motion.p
+            {/* <motion.p
               className="coming-soon-description"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.7 }}
             >
-              We're currently curating comprehensive information about our fleet of vessels. 
-              Soon you'll be able to explore our diverse range of ships, their specifications, 
-              and current deployment status.
-            </motion.p>
+              We are currently curating comprehensive information about our fleet of vessels. Soon, you will be able to explore our diverse range of ships, their specifications, and current deployment status.
+            </motion.p> */}
           </motion.div>
         </div>
       </Section>
@@ -152,7 +156,7 @@ const FleetPage = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <h3>Panamax/Kamsarmax</h3>
-              <p>Versatile workhorses for diverse bulk cargo needs</p>
+              <p>Versatile segment for diverse bulk cargo needs</p>
             </motion.div>
             
             <motion.div 

@@ -2,7 +2,26 @@
 
 /* Page Header - inherits base styles from AboutPage.css */
 .contact-header {
-  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 1200 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='1200' y1='150' y2='150'%3E%3Cstop offset='0' stop-color='%23006699'/%3E%3Cstop offset='1' stop-color='%2333CCFF'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='1200' y2='300'%3E%3Cstop offset='0' stop-color='%233399CC' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%233399CC' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='300'/%3E%3Cg fill-opacity='0.5'%3E%3Cpath fill='url(%23b)' d='M0 0L1200 0L1200 300L0 300Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url('../../assets/@55.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.contact-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.contact-header .container {
+  position: relative;
+  z-index: 2;
 }
 
 /* Contact Grid */
@@ -11,25 +30,56 @@
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: flex-start;
+  padding: 2rem 0;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  width: 100%;
 }
 
 .contact-info-intro p {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 2rem;
-  color: var(--text-secondary);
+  color: var(--text-primary);
+  text-align: left;
 }
 
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.contact-details p {
+  margin: 0;
+  padding: 0;
+  display: block !important; /* Override any other display rules */
 }
 
 .contact-detail-item {
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 1.5rem;
+  width: 100%;
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.contact-detail-item:hover {
+  transform: translateY(-5px);
 }
 
 .contact-icon {
@@ -45,17 +95,57 @@
   flex-shrink: 0;
 }
 
+.contact-text {
+  text-align: left;
+  flex: 1;
+  color: #333333; /* Ensure parent text color is dark */
+}
+
 .contact-text h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.7rem;
   color: var(--primary-300);
+  font-weight: 600;
+}
+
+.contact-text h4.detail-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.7rem;
+  color: var(--primary-300);
+  font-weight: 600;
 }
 
 .contact-text p {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
+  display: block !important;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary) !important; /* Changed from hardcoded #333333 to CSS variable */
+  font-weight: 500;
+  font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 0.25rem;
+}
+
+.contact-text p.detail-text {
+  display: block !important;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary) !important; /* Changed from hardcoded #333333 to CSS variable */
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.contact-email {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-200);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  margin-left: 0.5rem;
+}
+
+.contact-email:hover {
+  color: var(--primary-100);
+  text-decoration: underline;
 }
 
 /* Contact Form */
@@ -220,6 +310,10 @@
     grid-template-columns: 1fr;
   }
   
+  .contact-detail-item {
+    max-width: 100%;
+  }
+  
   .inquiry-types {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -286,4 +380,53 @@
   background-color: var(--background);
   opacity: 0.7;
   cursor: not-allowed;
+}
+
+.contact-section {
+  background-color: var(--background);
+  padding: 4rem 0;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-primary); /* Changed from hardcoded #333333 to CSS variable */
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.detail-title {
+  font-size: 1.3rem;
+  color: var(--primary-300);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.detail-text {
+  font-size: 1.1rem;
+  color: var(--text-primary); /* Changed from hardcoded #333333 to CSS variable */
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.email-label {
+  font-weight: 600;
+  color: var(--text-primary); /* Changed from hardcoded #333333 to CSS variable */
+  min-width: 80px;
+}
+
+.contact-email {
+  color: var(--primary-200);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.contact-email:hover {
+  color: var(--primary-100);
+  text-decoration: underline;
 } 
