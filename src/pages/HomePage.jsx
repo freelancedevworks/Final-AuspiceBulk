@@ -22,8 +22,7 @@ const HomePage = () => {
             className="hero-video"
             poster="/55.jpg"
           >
-            <source src="/videos/69.mp4" type="video/mp4" />
-            <source src="/videos/69.webm" type="video/webm" />
+            <source src="https://auspice-bulk-videos.b-cdn.net/Panamax%20Bulk%20Carrier%20at%20Anchor%20Nov%2027%202023%20(1).mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="hero-overlay"></div>
