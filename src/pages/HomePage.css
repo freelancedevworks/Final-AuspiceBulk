@@ -302,6 +302,7 @@
   box-shadow: 0 10px 30px var(--shadow);
   position: relative;
   transition: all var(--transition-medium);
+  height: 350px  !important;
 }
 
 .about-image-container:hover {

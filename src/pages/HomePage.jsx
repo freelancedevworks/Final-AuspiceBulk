@@ -22,7 +22,7 @@ const HomePage = () => {
             className="hero-video"
             poster="/55.jpg"
           >
-            <source src="https://auspice-bulk-videos.b-cdn.net/Panamax%20Bulk%20Carrier%20at%20Anchor%20Nov%2027%202023%20(1).mp4" type="video/mp4" />
+            <source src="/69.webm" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="hero-overlay"></div>
@@ -47,7 +47,7 @@ const HomePage = () => {
               "Navigating Trust, Delivering Excellence"
             </h1>
             <p className="hero-subtitle">
-              Freight Trading and Shipping solutions across International Markets
+              Freight Trading and Shipping Solutions across International Markets
             </p>
             <div className="hero-buttons" style={{
               justifyContent: 'center' 

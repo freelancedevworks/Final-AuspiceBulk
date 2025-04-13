@@ -70,7 +70,7 @@ const AboutPage = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="about-image-container">
+            <div className="about-image-container2">
             <img src="/77.jpg" alt="Auspice Bulk Operations" className="img-fluid" />
             </div>
           </motion.div>
@@ -253,7 +253,7 @@ const AboutPage = () => {
             <h3>Operational Excellence</h3>
             <p>
               Our rigorous operational procedures and quality management systems ensure that we maintain 
-              the highest standards in all aspects of our service delivery.
+              the highest standards in all aspects of our services.
             </p>
           </motion.div>
         </div>

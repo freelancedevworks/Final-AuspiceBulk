@@ -347,9 +347,7 @@ const ContactPage = () => {
                 Interested in strategic partnerships or business collaborations? Reach out to our 
                 business development team to explore potential opportunities.
               </p>
-
             </motion.div>
-  
           </div>
         </div>
       </Section>

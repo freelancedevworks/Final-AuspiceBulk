@@ -269,7 +269,7 @@
 }
 
 .inquiry-card {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
   padding: 2rem;
   border-radius: var(--border-radius-lg);
   backdrop-filter: blur(10px);
@@ -277,6 +277,32 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.inquiry-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.inquiry-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.inquiry-card:hover::before {
+  transform: translateY(0);
 }
 
 .inquiry-card h3 {
@@ -285,6 +311,11 @@
   color: white;
   position: relative;
   padding-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.inquiry-card:hover h3 {
+  transform: translateX(5px);
 }
 
 .inquiry-card h3::after {
@@ -295,6 +326,11 @@
   width: 40px;
   height: 2px;
   background-color: var(--primary-100);
+  transition: width 0.3s ease;
+}
+
+.inquiry-card:hover h3::after {
+  width: 100%;
 }
 
 .inquiry-card p {
@@ -302,6 +338,11 @@
   flex-grow: 1;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
+  transition: transform 0.3s ease;
+}
+
+.inquiry-card:hover p {
+  transform: translateX(5px);
 }
 
 /* Responsive Styles */
