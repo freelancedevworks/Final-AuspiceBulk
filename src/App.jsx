@@ -11,6 +11,7 @@ import NewsPage from './pages/NewsPage';
 import CareerPage from './pages/CareerPage';
 import ContactPage from './pages/ContactPage';
 // import PolicyPage from './pages/PolicyPage';
+import NotFoundPage from './pages/NotFoundPage';
 import './styles/globals.css';
 
 // Wrap Routes with AnimatePresence
@@ -29,7 +30,7 @@ const AnimatedRoutes = () => {
         <Route path="/careers" element={<CareerPage />} />
         <Route path="/contact" element={<ContactPage />} />
         {/* <Route path="/policy" element={<PolicyPage />} /> */}
-        <Route path="*" element={<div className="container" style={{ paddingTop: '100px' }}>404 - Page Not Found</div>} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </AnimatePresence>
   );
