@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { FiArrowLeft, FiHome } from 'react-icons/fi';
 import Button from '../components/ui/Button';
 import './NotFoundPage.css';
