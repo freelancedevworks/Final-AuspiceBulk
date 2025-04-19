@@ -27,7 +27,7 @@
 [data-theme='dark'] {
   --primary-100: #4FDDFF;
   --primary-200: #3ABBEE;
-  --primary-300: #FFFFFF;
+  --primary-300: #5BC8F4;
   --background: #0A1929;
   --text-primary: #F0F7FF;
   --text-secondary: #A0AEC0;
@@ -88,6 +88,7 @@ h6 {
 
 p {
   margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
 a {
@@ -112,6 +113,9 @@ img {
   padding: 0 1.5rem;
 }
 
+/* --- Remove or comment out these general button rules --- */
+/* These are less specific and handled better in Button.css */
+/*
 button, .btn {
   cursor: pointer;
   padding: 0.5rem 1.5rem;
@@ -142,6 +146,8 @@ button, .btn {
   background-color: var(--primary-200);
   color: white;
 }
+*/
+/* --- End of rules to remove/comment --- */
 
 .section {
   padding: 5rem 0;

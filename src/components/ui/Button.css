@@ -10,9 +10,10 @@
   border: none;
   outline: none;
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: none !important;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .btn::before {
@@ -26,7 +27,7 @@
   border-radius: 50%;
   transform: translate(-50%, -50%);
   transition: width 0.5s, height 0.5s;
-  z-index: 1;
+  z-index: -1;
 }
 
 .btn:hover::before {
@@ -34,49 +35,101 @@
   height: 300px;
 }
 
-.btn-text {
+.btn-content {
   position: relative;
   z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  pointer-events: none;
+}
+
+.btn-with-icon {
+  gap: 0;
+}
+
+.btn-text {
+  /* No specific styles needed here now, handled by .btn-content */
 }
 
 /* Variants */
-.btn-primary {
+.btn.btn-primary {
   background-color: var(--primary-200);
-  color: white;
+  color: #ffffff;
 }
 
-.btn-primary:hover {
+.btn.btn-primary .btn-content,
+.btn.btn-primary .btn-icon {
+  color: #ffffff;
+}
+
+.btn.btn-primary:hover {
   background-color: var(--primary-300);
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  color: white;
 }
 
-.btn-secondary {
+.btn.btn-primary:hover .btn-content,
+.btn.btn-primary:hover .btn-icon {
+  color: #ffffff;
+}
+
+/* --- DARK THEME OVERRIDE for Primary Hover --- */
+[data-theme="dark"] .btn.btn-primary:hover .btn-content,
+[data-theme="dark"] .btn.btn-primary:hover .btn-icon {
+  color: #ffffff !important;
+}
+
+.btn.btn-secondary {
   background-color: transparent;
   border: 2px solid var(--primary-200);
   color: var(--primary-200);
 }
 
-.btn-secondary:hover {
+.btn.btn-secondary .btn-content,
+.btn.btn-secondary .btn-icon {
+  color: var(--primary-200);
+}
+
+.btn.btn-secondary:hover {
   background-color: var(--primary-200);
-  color: white;
+  border-color: var(--primary-200);
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.btn-text-only {
+.btn.btn-secondary:hover .btn-content,
+.btn.btn-secondary:hover .btn-icon {
+  color: #ffffff;
+}
+
+/* --- DARK THEME OVERRIDE for Secondary Hover --- */
+[data-theme="dark"] .btn.btn-secondary:hover .btn-content,
+[data-theme="dark"] .btn.btn-secondary:hover .btn-icon {
+  color: #ffffff !important;
+}
+
+.btn.btn-text-only {
   background-color: transparent;
   color: var(--primary-200);
   padding: 0.5rem;
   border-radius: 0;
 }
 
-.btn-text-only::before {
+.btn.btn-text-only .btn-content,
+.btn.btn-text-only .btn-icon {
+  color: var(--primary-200);
+}
+
+.btn.btn-text-only::before {
   display: none;
 }
 
-.btn-text-only::after {
+.btn.btn-text-only::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -87,12 +140,18 @@
   transition: width var(--transition-medium);
 }
 
-.btn-text-only:hover {
+.btn.btn-text-only:hover {
   color: var(--primary-300);
 }
 
-.btn-text-only:hover::after {
+.btn.btn-text-only:hover .btn-content,
+.btn.btn-text-only:hover .btn-icon {
+  color: var(--primary-300);
+}
+
+.btn.btn-text-only:hover::after {
   width: 100%;
+  background-color: var(--primary-300);
 }
 
 /* Sizes */
@@ -112,16 +171,13 @@
 }
 
 /* With Icon */
-.btn-with-icon {
-  gap: 8px;
-}
-
 .btn-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   z-index: 2;
+  color: inherit;
 }
 
 .btn-icon-right {
@@ -138,4 +194,35 @@
 
 .btn:hover .btn-icon-left {
   transform: translateX(-3px);
-} 
+}
+
+/* Link button specific styles */
+a.btn, a.btn:hover, a.btn:focus, a.btn:active {
+  text-decoration: none !important;
+}
+
+/* Ensure icons inherit colors properly */
+.btn.btn-primary .btn-icon,
+.btn.btn-secondary:hover .btn-icon {
+  color: #ffffff;
+}
+
+.btn.btn-secondary .btn-icon {
+  color: var(--primary-200);
+}
+
+.btn.btn-text-only .btn-icon {
+  color: var(--primary-200);
+}
+
+.btn.btn-text-only:hover .btn-icon {
+  color: var(--primary-300);
+}
+
+/* --- Reminder: Check Global Dark Theme CSS --- */
+/* Search your global CSS (index.css, App.css, etc.) for:
+   [data-theme="dark"] body, [data-theme="dark"] * { ... }
+   [data-theme="dark"] a:hover, [data-theme="dark"] button:hover { ... }
+   Ensure these DO NOT set a 'color' that overrides the button's specific hover color.
+   The '!important' added above should help, but removing the conflict is cleaner.
+*/ 

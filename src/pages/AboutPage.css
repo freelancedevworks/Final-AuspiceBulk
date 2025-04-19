@@ -1,20 +1,28 @@
 /* Page Header */
 .page-header {
-  
   position: relative;
   height: 250px;
-  background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-300) 100%);
   display: flex;
   align-items: center;
   padding-top: 80px;
   overflow: hidden;
 }
 
+/* Add a darker overlay to hide text on the boat */
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Increased opacity */
+  z-index: 1;
+}
+
 .about-header {
-  background-image: url('../../assets/@55.jpg');
+  background-position: center 25%; /* Adjust this value to move the background image up/down */
   background-size: cover;
-  background-position: center;
-  position: relative;
 }
 
 .about-header::before {
@@ -388,21 +396,6 @@
   justify-content: center;
   gap: 1.5rem;
   margin-top: 2rem;
-}
-
-/* Fix for the Contact Our Team button visibility */
-.cta-container a[class*="btn-secondary"] {
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-}
-
-.cta-container a[class*="btn-secondary"]:hover {
-  background-color: white;
-  color: var(--primary-300);
-  border-color: white;
-  transform: scale(1.05);
 }
 
 /* Adjust the gradient section background to be darker */

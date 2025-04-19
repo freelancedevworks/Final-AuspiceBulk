@@ -181,9 +181,36 @@
   color: white;
 }
 
-.contact-info {
-  font-style: normal;
-  margin-top: 1px;
+.footer .contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 3px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.footer .contact-details p,
+.footer .contact-details .address-line {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.3 !important;
+  transition: all 0.3s ease;
+}
+
+.footer .address-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 6px !important;
+  line-height: 1.3 !important;
+}
+
+.footer .address-line {
+  font-size: 0.95rem;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.3 !important;
 }
 
 .contact-item {
@@ -209,36 +236,6 @@
 .contact-item:hover .contact-icon {
   transform: scale(1.1);
   filter: drop-shadow(0 0 8px rgba(51, 204, 255, 0.5));
-}
-
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.contact-details p {
-  margin: 0;
-  line-height: 1.2;
-  transition: all 0.3s ease;
-}
-
-.address-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: white;
-  margin-bottom: 3px !important;
-}
-
-.address-line {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.2;
-}
-
-.contact-item:hover .address-line {
-  color: white;
-  transform: translateX(3px);
 }
 
 .footer-bottom {
@@ -274,7 +271,8 @@
 
 .social-links-bottom {
   display: flex;
-  gap: 15px;
+  gap: 20px;
+  justify-content: center;
 }
 
 .social-links-bottom a {
@@ -376,16 +374,15 @@
     padding: 10px 0;
   }
 
-  .contact-details {
-    gap: 6px;
+  .footer .contact-details {
+    gap: 2px !important;
   }
 
-  .address-title {
-    font-size: 1.05rem;
-  }
-
-  .address-line {
+  .footer .address-line {
     font-size: 0.95rem;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .footer-description {

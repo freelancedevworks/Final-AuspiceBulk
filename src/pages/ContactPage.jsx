@@ -106,7 +106,7 @@ const ContactPage = () => {
               transition={{ duration: 0.5 }}
             >
               <p className="intro-text">
-                We are here to discuss your Freight Requirement and Ship Management queries.
+                We are here to discuss your Freight Requirements and Ship Management queries.
               </p>
             </motion.div>
             

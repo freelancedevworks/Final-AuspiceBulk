@@ -14,12 +14,14 @@ const Button = ({
   ...props
 }) => {
   const buttonClass = `btn btn-${variant} btn-${size} ${icon ? 'btn-with-icon' : ''} ${className}`;
+
+  // Wrap content in a span for better styling control
   const buttonContent = (
-    <>
+    <span className="btn-content">
       {icon && iconPosition === 'left' && <span className="btn-icon btn-icon-left">{icon}</span>}
       <span className="btn-text">{children}</span>
       {icon && iconPosition === 'right' && <span className="btn-icon btn-icon-right">{icon}</span>}
-    </>
+    </span>
   );
 
   // Render as Link if "to" prop exists

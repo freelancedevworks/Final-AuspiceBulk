@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiLinkedin, FiInstagram } from 'react-icons/fi';
+import { FiLinkedin } from 'react-icons/fi';
 import { BsTwitterX } from "react-icons/bs";
 import { HiOutlineMail, HiLocationMarker } from 'react-icons/hi';
 import { useTheme } from '../../hooks/useTheme';
@@ -119,7 +119,7 @@ const Footer = () => {
             >
               <div className="contact-details">
                 <p className="address-title">Auspice Bulk DMCC</p>
-                <p className="address-line">3703, JBC -2, Cluster V</p>
+                <p className="address-line">3703, JBC-2, Cluster V</p>
                 <p className="address-line">Jumeirah Lake Towers</p>
                 <p className="address-line">P.O. Box 338455</p>
                 <p className="address-line">Dubai, UAE</p>
@@ -160,42 +160,22 @@ const Footer = () => {
           &copy; {currentYear} Auspice Bulk. All Rights Reserved.
         </motion.p>
         <div className="social-links-bottom">
-          
-          <motion.a 
+          <a 
             href="https://www.linkedin.com/company/auspicebulk/about/" 
             target="_blank" 
-            rel="noopener noreferrer" 
+            rel="noopener noreferrer"
             aria-label="LinkedIn"
-            variants={socialIconAnimation}
-            whileHover="hover"
-            whileTap="tap"
           >
             <FiLinkedin />
-          </motion.a>
-          
-          <motion.a 
-            href="https://www.instagram.com/auspicebulk/" 
+          </a>
+          <a 
+            href="https://twitter.com/auspicebulk" 
             target="_blank" 
-            rel="noopener noreferrer" 
-            aria-label="Instagram"
-            variants={socialIconAnimation}
-            whileHover="hover"
-            whileTap="tap"
-          >
-            <FiInstagram />
-          </motion.a>
-          <motion.a 
-            href="https://x.com/auspicebulk" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+            rel="noopener noreferrer"
             aria-label="Twitter"
-            variants={socialIconAnimation}
-            whileHover="hover"
-            whileTap="tap"
           >
             <BsTwitterX />
-          </motion.a>
-
+          </a>
         </div>
       </div>
     </footer>
