@@ -472,7 +472,7 @@
   }
   
   .hero-video-container {
-    background: url('/55.jpg') center center/cover no-repeat; /* Fallback for mobile */
+    background: url('/55.png') center center/cover no-repeat; /* Fallback for mobile */
   }
 }
 

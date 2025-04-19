@@ -20,7 +20,7 @@ const HomePage = () => {
             loop 
             playsInline 
             className="hero-video"
-            poster="/55.jpg"
+            poster="/55.png"
             preload="auto"
           >
             <source src="/69.webm" type="video/webm" />
@@ -234,7 +234,7 @@ const HomePage = () => {
 
       {/* Call to Action Section */}
       <section className="cta-section" style={{ 
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.7)), url(/55.jpg)', 
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.7)), url(/55.png)', 
         backgroundSize: 'cover', 
         backgroundPosition: 'center' 
       }}>
